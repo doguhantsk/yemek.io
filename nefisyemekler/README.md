@@ -204,6 +204,45 @@ Admin paneline erişmek için admin hesabıyla giriş yapın ve menüden "Admin 
 - Dosya yükleme boyutu limiti: 16MB
 - İzin verilen resim formatları: PNG, JPG, JPEG, GIF, WEBP
 
+## İnternette Yayınlama (Render.com)
+
+Bu Flask uygulamasını **ücretsiz** olarak internette yayınlamak için:
+
+### 1. GitHub'a Push Edin
+```bash
+git add .
+git commit -m "Deploy için hazır"
+git push origin main
+```
+
+### 2. Render.com'a Giriş Yapın
+- [render.com](https://render.com) adresine gidin
+- GitHub hesabınızla giriş yapın
+
+### 3. Yeni Web Service Oluşturun
+- "New +" butonuna tıklayın
+- "Web Service" seçin
+- GitHub reponuzu seçin
+- Render otomatik olarak `render.yaml` dosyasını algılayacak
+
+### 4. Deploy Edin
+- "Create Web Service" butonuna tıklayın
+- Render otomatik olarak uygulamanızı deploy edecek
+- Deploy tamamlandığında size bir URL verilecek (örn: `https://nefisyemekler.onrender.com`)
+
+### Önemli Notlar
+- İlk deploy 5-10 dakika sürebilir
+- Ücretsiz planda uygulama 15 dakika kullanılmazsa uyku moduna geçer
+- İlk ziyarette uyanması 30-60 saniye sürebilir
+- Veritabanı SQLite kullanıldığı için her deploy'da sıfırlanacak (production için PostgreSQL önerilir)
+
+### Alternatif Hosting Seçenekleri
+- **PythonAnywhere** - Flask için optimize, ücretsiz plan
+- **Railway** - Kolay kullanım, başlangıç kredisi
+- **Vercel** - Serverless deployment
+
+**Not:** GitHub Pages sadece statik HTML/CSS/JS destekler, Flask gibi Python backend uygulamaları çalıştıramaz.
+
 ## Lisans
 
 Bu proje eğitim amaçlı geliştirilmiştir.
